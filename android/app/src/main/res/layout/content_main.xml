@@ -14,7 +14,16 @@
     tools:showIn="@layout/app_bar_main">
 
     <TextView
+        android:id="@+id/hello_world"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"/>
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hello_world"
+        android:text="@string/you_have_pressed_the_button_0_times"/>
+
 </RelativeLayout>
