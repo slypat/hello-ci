@@ -1,2 +1,15 @@
 general:
     build_dir: android
+
+dependencies:
+    pre:
+        - echo y | android update sdk --no-ui --all --filter "tools,platform-tools,android-23"
+        - echo y | android update sdk --no-ui --all --filter "build-tools-24.0.0"
+        - echo y | android update sdk --no-ui --all --filter "extra-android-m2repository"
+
+test:
+    override:
+        - ./gradlew test
+
+    post:
+        - cp -r app/build/test-results/debug/ $CIRCLE_TEST_REPORTS
